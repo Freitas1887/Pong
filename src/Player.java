@@ -6,9 +6,13 @@ public class Player {
 
     public int x, y;
 
+    public int width, height;
+
     public Player (int x, int y){
         this.x = x;
         this.y = y;
+        this.width = 40;
+        this.height = 10;
     }
 
     public void tick(){
@@ -17,10 +21,15 @@ public class Player {
         } else if (left) {
             x--;
         }
+        if (x + width > Game.WIDTH){
+            x = Game.WIDTH - width;
+        } else if (x < 0) {
+            x = 0;
+        }
     }
 
     public void render(Graphics g){
         g.setColor(Color.BLUE);
-        g.fillRect(x,y,40,10);
+        g.fillRect(x,y,width,height);
     }
 }

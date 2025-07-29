@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 public class Game  extends Canvas implements  Runnable, KeyListener {
 
-    private static final long serialVersionUID = 1L;
+   //private static final long serialVersionUID = 1L;
     public static int WIDTH = 240;
     public static int HEIGHT = 120;
     public static int SCALE = 3;
@@ -56,7 +56,7 @@ public class Game  extends Canvas implements  Runnable, KeyListener {
 
     @Override
     public void run() {
-        while (true) {
+        while(true) {
             tick();
             render();
             try {
